@@ -1,0 +1,22 @@
+  {
+    "name": "Sound of analytics",
+    "version": "1.0",
+    "description": "Play music everytime a website sends request to Google Analytics",
+    "manifest_version": 2,
+		"background": {
+			"scripts": ["eventPage.js"]
+		},
+   "permissions": [
+		 "tabs",
+		 "activeTab",
+     "webRequest",
+     "<all_urls>"
+    ],
+		"content_scripts": [
+			{
+			  "matches": ["<all_urls>"],
+			  "js": ["Tone.min.js", "music.js"],
+				"run_at": "document_start"
+			}
+		]
+  }
